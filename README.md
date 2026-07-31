@@ -1,87 +1,95 @@
-# Welcome to React Router!
+# Venus UI
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A lightweight React + Vite starter using React Router and a small landing page UI.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+[![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg?style=flat-square)]()
 
-## Features
+## Table of contents
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+* [Introduction](#introduction)
+* [Highlights in this branch](#highlights-in-this-branch)
+* [Installation](#installation)
+* [Quick start (development)](#quick-start-development)
+* [Building and deployment](#building-and-deployment)
+* [Project layout](#project-layout)
+* [Getting help and contributing](#getting-help-and-contributing)
+* [License](#license)
 
-## Getting Started
+## Introduction
 
-### Installation
+Venus UI is a small React UI scaffold intended as the front-end for the Venus project. It uses Vite + TypeScript and React Router for client-side routing. This README follows the mhucka/readmine suggested structure.
 
-Install the dependencies:
+## Highlights in this branch
 
-```bash
+Unreleased (branch: feature/initial-landing-page)
+
+- Added an initial landing page at / (app/landing/*)
+- Added basic React Router setup and routes (app/routes.ts, app/routes/home.tsx)
+- Added images and styles for the landing page (app/landing/, app/app.css)
+- Added Dockerfile and deploy.dev.sh for simple deployment testing
+- Added package.json and lockfile to track dependencies
+- Added react-router skill docs under .agents/skills/react-router (documentation files)
+
+## Installation
+
+Prerequisites: Node 18+, npm 9+, or an equivalent node toolchain.
+
+Install dependencies:
+
+```sh
 npm install
 ```
 
-### Development
+## Quick start (development)
 
-Start the development server with HMR:
+Start the dev server (hot reload enabled):
 
-```bash
+```sh
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+Open: http://localhost:5173
 
-## Building for Production
+## Building and deployment
 
 Create a production build:
 
-```bash
+```sh
 npm run build
 ```
 
-## Deployment
+Docker (local test):
 
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+```shndocker build -t venus-ui:local .
+docker run -p 3000:3000 venus-ui:local
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+There is a simple deploy script for development hosts: deploy.dev.sh (make executable on Unix-like systems).
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+## Project layout
 
-### DIY Deployment
+Key paths added or modified in this branch:
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
+- app/landing/ — landing page components and images
+- app/routes.ts, app/routes/home.tsx — route definitions and home route
+- app/root.tsx — application entry wiring
+- app/app.css — lightweight styles for landing page
+- Dockerfile, deploy.dev.sh — containerization and dev deploy helper
+- react-router.config.ts — router configuration helper (TypeScript)
+- .agents/skills/react-router/ — documentation for the react-router skill (not part of runtime)
 
-Make sure to deploy the output of `npm run build`
+## Getting help and contributing
 
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
+Open an issue or a PR describing the problem or feature. For this branch, review focuses on the landing page, routing, and deployment artifacts.
 
-## Styling
+Contributing notes:
+- Keep changes small and focused per PR
+- Run the dev server and verify the landing page renders at /
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+## License
+
+MIT License
 
 ---
 
-Built with ❤️ using React Router.
+Generated using the mhucka/readmine README structure adapted for this project.
