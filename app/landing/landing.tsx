@@ -1,4 +1,5 @@
 import headshot from "./headshot.png";
+import logo from "./aca-removebg.png";
 
 export function Landing() {
   return (
@@ -9,7 +10,6 @@ export function Landing() {
             <img 
               src={headshot}
               alt="headshot latest"
-              className="block w-full"
             />
           </div>
           <div id="name">
@@ -23,12 +23,62 @@ export function Landing() {
             looking for work but you should keep a tab on my projects because I'm the best.
           </div>
         </header>
-        <div className="w-[80vw] max-w-[750px]">
-          <div id="work">
-            {/* TODO: Add current work, format like LinkedIn */}
+        <div className="w-[80vw] max-w-[750px]"
+            style={{
+              display:"flex",
+              flexDirection:"column"
+            }}>
+          <div id="work" style={
+            {
+              display:"flex", 
+              flexDirection:"row",
+              justifyContent:"center"
+            }
+          }>
+            <div className="w-[100px]">
+              <img
+                src={logo}
+                alt="ACA Group logo"
+              />
+            </div>
+            <div className="w-[1em]" />
+            <div style={{
+              display:"flex",
+              flexDirection:"column",
+              justifyContent:"center"
+            }}>
+              <p>Associate Product Engineer</p>
+              <p>ACA Group · July 2026 - Present</p>
+              <p>Durham, NC, United States · Hybrid</p>
+            </div>
           </div>
-          <div id="contact">
-            {/* TODO: Add my info (email, GitHub) */}
+          <div className="h-[2em]" />
+          <div style={{
+            display:"flex",
+            justifyContent:"center"
+          }}>
+            <div id="contact"
+                style={{
+                  display:"flex",
+                  flexDirection:"column"
+                }}>
+              <p><span>Email: </span>
+                <a href="mailto:mason@hicksm.dev" style={{
+                  color:"blue",
+                  textDecoration:"underline"
+                }}>
+                  mason@hicksm.dev
+                </a>
+              </p>
+              <p><span>GitHub: </span>
+                <a href="https://www.github.com/toll-bark" style={{
+                  color:"blue",
+                  textDecoration:"underline"
+                }}>
+                  toll-bark
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
